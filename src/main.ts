@@ -1,11 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
+import vuetify from './plugins/vuetify'
+import Home from './views/Home.vue'
+import '@/assets/main.css'
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
+  vuetify,
+  render: h => h(Home)
 }).$mount('#app')
