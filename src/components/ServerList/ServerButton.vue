@@ -5,6 +5,7 @@
 			'serverbutton-hasNotification': hasNotification,
 			'serverbutton-isHome': isHome,
 		}"
+		@click="chama(index)"
 	>
 		<img
 			src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png"
@@ -15,14 +16,22 @@
 </template>
 
 <script lang="ts">
-	export default {
-		props: {
-			selected: Boolean,
-			isHome: Boolean,
-			hasNotification: Boolean,
-			mentions: Number,
-		},
-	};
+	import Vue from 'vue';
+	import { Component, Prop } from 'vue-property-decorator';
+
+	@Component
+	export default class ServerButton extends Vue {
+		@Prop() selected!: Boolean;
+		@Prop() isHome!: Boolean;
+		@Prop() hasNotification!: Boolean;
+		@Prop() mentions!: Number;
+		@Prop() index!: Number;
+
+		chama(index: Number){
+			console.log(`index ${index}`)
+		}
+
+	}
 </script>
 
 <style scoped>
@@ -40,6 +49,7 @@
 		border-radius: 50%;
 		margin-bottom: 7px;
 		transition: all ease-out 0.2s;
+
 	}
 
 	.serverbutton img {

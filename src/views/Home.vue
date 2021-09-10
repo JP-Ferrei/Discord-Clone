@@ -1,21 +1,20 @@
 <template>
 	<div id="grid">
-		<ServerList />
-		<ServerName />
+		<server-list />
+		<server-name />
+		<channel-list />
+		<user-info />
+		<channel-info />
+		<channel-data />
+		<user-list />
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import ServerList from '@/components/ServerList/index.vue';
-	import ServerName from '@/components/ServerName/index.vue';
+	import { Vue, Component } from 'vue-property-decorator';
 
-	export default Vue.extend({
-		components: {
-			ServerList,
-			ServerName,
-		},
-	});
+	@Component
+	export default class Home extends Vue {}
 </script>
 
 <style scoped>
@@ -28,5 +27,8 @@
 			'ServerList ServerName  ChannelInfo ChannelInfo'
 			'ServerList ChannelList ChannelData UserList'
 			'ServerList UserInfo    ChannelData UserList';
+	}
+
+	.col2 {
 	}
 </style>

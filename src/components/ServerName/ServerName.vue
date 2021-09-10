@@ -7,11 +7,12 @@
 	</div>
 </template>
 <script lang="ts">
-	import ExpandIcon from 'vue-material-design-icons/ChevronDown.vue';
-	export default {
-		components: {
-			ExpandIcon,
-		},
+	import { Vue, Component } from "vue-property-decorator";
+	
+	@Component
+	export default class ServerName extends Vue {
+		
+		
 	};
 </script>
 

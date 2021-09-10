@@ -5,6 +5,7 @@ import vuetify from './plugins/vuetify'
 import Home from './views/Home.vue'
 import '@/assets/main.css'
 
+require('./components/index')
 Vue.config.productionTip = false
 
 new Vue({
